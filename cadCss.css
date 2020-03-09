@@ -1,7 +1,22 @@
-body {
+@font-face {
+    font-family: helvetica;
+    src: url('data/Helvetica Bold.ttf');
+}
+
+#body {
+    background-color: #fefefe;
+    width: 100%;
+    height: 5000px;
+}
+
+.background {
+    z-index: -100;
+    position: fixed;
     background-color: #77a1ae;
     width: 100%;
-    height: 100%;
+    height: 1090px;
+    left: 0px;
+    top: 0px;
 }
 
 a:link {
@@ -24,12 +39,32 @@ a {
     text-decoration: none;
 }
 
+#header {
+    z-index: 99999;
+    background-color: #fefefe;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    left: 50%;
+    margin-left: -50%;
+    margin-top: -12px;
+}
+
+#header li a:link {
+    color: #77a1ae;
+}
+
+#header li a:visited {
+    color: #77a1ae;
+}
+
 #header li {
+
     font-style: normal;
     font-variant: normal;
     font-weight: bold;
     font-size: 17px;
-    font-family: sans-serif;
+    font-family: helvetica;
     float: left;
     position: relative;
     display: block;
@@ -39,9 +74,10 @@ a {
 }
 
 .animation {
+    font-family: helvetica;
     line-height: 125px;
     text-align: center;
-    text-transform:uppercase;
+    text-transform: uppercase;
     letter-spacing: 0.7em;
     font-size: 2.8em;
     width: 1000px;
@@ -54,23 +90,199 @@ a {
     margin-left: -500px;
 }
 
-.animation .letter{
+.animation2 {
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.7em;
+    font-size: 3.5em;
+    width: 1000px;
+    height: 100px;
+    color: #fefefe;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -50px;
+    margin-left: -500px;
+}
+
+.animation3 {
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0em;
+    font-size: 20em;
+    width: 1000px;
+    height: 100px;
+    color: #fefefe;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -120px;
+    margin-left: -500px;
+}
+
+.animation .letter,
+.animation2 .letter,
+.animation3 .letter {
+    font-family: helvetica;
     display: inline-block;
     line-height: 1em;
 }
-#footer{
-    background-color: #fefefe;
+
+#button {
+    position: fixed;
+    z-index: 99999;
+    left: 90%;
+    margin-top: 2px;
+
 }
-#footer h1 {
+
+#button .button {
+    background-color: #77a1ae;
+    border: none;
     color: #fefefe;
+    padding: 10px 25px;
+    text-align: center;
+    font-family: helvetica;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#button .button:hover {
+    background-color: #fefefe;
+    color: #77a1ae;
+}
+
+#footer h1 {
+    background-color: black;
+    color: #77a1ae;
     font-style: normal;
     font-variant: normal;
-    font-weight:normal;
+    font-weight: normal;
     font-size: 1.5em;
-    font-family: sans-serif;
+    font-family: helvetica;
+    text-transform: uppercase;
     float: left;
     position: absolute;
     display: block;
-    top: 95%;
-    left: 50px;
+    top: 90%;
+    left: 0px;
 }
+
+.logo {
+    background-color: #fefefe;
+    height: 15px;
+    width: 15px;
+    position: fixed;
+    left: 15px;
+    top: 90%;
+}
+
+.tag {
+    position: fixed;
+    z-index: 99998;
+    width: 50px;
+    height: 50px;
+    top: 90%;
+    left: 90%;
+    cursor: pointer;
+
+}
+
+.tag img {
+    width: 50px;
+    height: 50px;
+}
+
+.content1 {
+    position: relative;
+    z-index: 2;
+    width: 1000px;
+    height: 900px;
+    top: 1090px;
+    left: 40%;
+    margin-left: -500px;
+}
+
+.content1 h1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+    color: #fefefe;
+    font-size: 6em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content1 h2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 75px;
+    margin-left: 55px;
+    color: #fefefe;
+    font-size: 4em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content1 #easing {
+    position: absolute;
+    color: #77a1ae;
+    font-size: 3em;
+    text-shadow: -4px 4px 0 #fefefe, 4px 4px 0 #fefefe, 4px -4px 0 #fefefe, -4px -4px 0 #fefefe;
+    top: 0px;
+    left: 0px;
+    margin-top: 200px;
+    margin-left: 55px;
+    font-family: helvetica;
+    line-height: 28px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.ea1,
+.ea2,
+.ea3,
+.ea4,
+.ea5,
+.ea6,
+.ea7,
+.ea8,
+.ea9,
+.ea10,
+.ea11,
+.ea12,
+.ea13,
+.ea14,
+.ea15,
+.ea16,
+.ea17,
+.ea18,
+.ea19,
+.ea20,
+.ea21,
+.ea22,
+.ea23,
+.ea24,
+    {}
