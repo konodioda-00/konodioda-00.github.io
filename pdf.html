@@ -11,7 +11,8 @@
     <script src="jquery-3.4.1.js"></script>
 </head>
 
-<body>
+<body id="body">
+    <div class="background"></div>
     <div id="header">
         <ul>
             <li class="title">
@@ -37,10 +38,10 @@
             </li>
         </ul>
     </div>
-    <div id="article">
-        <object data="data/hm.pdf" type="application/pdf" width="700" height=850>
-            <a href="data/hm.pdf">hm.pdf</a>
-        </object>
+    <div id="button">
+        <button class="button" onclick="alert('略~略~略~！！！')">
+            more
+        </button>
     </div>
     <div id="footer">
         <h1 class="footer">
@@ -49,6 +50,21 @@
                 cad
             </a>
         </h1>
+    </div>
+    <div class="tag">
+        <img src="data/tag.png" alt="tag" />
+    </div>
+    <div class="bottomBar">
+        <h1>Written by <a href="mailto:604809902@qq.com">PlutoCAD</a>.</h1>
+        <p class="bar">Visit me at:</p>
+        <a class="bar" href="https://cadpluto.000webhostapp.com/">https://cadpluto.000webhostapp.com/</a>
+        <p class="bar">Pudong, Shanghai</p>
+        <p class="bar">China</p>
+    </div>
+    <div id="article">
+        <object data="data/hm.pdf" type="application/pdf" width="700" height=850>
+            <a href="data/hm.pdf">hm.pdf</a>
+        </object>
     </div>
     <script type="text/javascript" src="anime.min.js"></script>
     <script src="cadJs.js"></script>

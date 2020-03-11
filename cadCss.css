@@ -6,7 +6,7 @@
 #body {
     background-color: #fefefe;
     width: 100%;
-    height: 5000px;
+    height: 4200px;
 }
 
 .background {
@@ -137,7 +137,6 @@ a {
     z-index: 99999;
     left: 90%;
     margin-top: 2px;
-
 }
 
 #button .button {
@@ -176,15 +175,6 @@ a {
     display: block;
     top: 90%;
     left: 0px;
-}
-
-.logo {
-    background-color: #fefefe;
-    height: 15px;
-    width: 15px;
-    position: fixed;
-    left: 15px;
-    top: 90%;
 }
 
 .tag {
@@ -286,3 +276,150 @@ a {
 .ea23,
 .ea24,
     {}
+
+.content2 {
+    position: relative;
+    z-index: 3;
+    width: 1000px;
+    height: 900px;
+    top: 1290px;
+    left: 40%;
+    margin-left: -500px;
+}
+
+.content2 h1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+    color: #fefefe;
+    font-size: 6em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content2 h2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 75px;
+    margin-left: 55px;
+    color: #fefefe;
+    font-size: 4em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content2 .hi {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 570px;
+    margin-left: 180px;
+    color: #77a1ae;
+    font-size: 40em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content2 .logo {
+    background-color: #fefefe;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin-top: 200px;
+    margin-left: 55px;
+}
+
+.content3 {
+    position: relative;
+    z-index: 4;
+    width: 1000px;
+    height: 400px;
+    top: 1490px;
+    left: 40%;
+    margin-left: -500px;
+}
+
+.content3 h1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 0px;
+    color: #fefefe;
+    font-size: 6em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content3 h2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin-top: 75px;
+    margin-left: 55px;
+    color: #fefefe;
+    font-size: 4em;
+    font-family: helvetica;
+    line-height: 125px;
+    text-align: left;
+    letter-spacing: normal;
+    width: 400px;
+    height: 300px;
+}
+
+.content3 svg {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    margin: 0 auto;
+    left: 0px;
+    top: 0px;
+}
+
+.bottomBar{
+    color: #fefefe;
+    font-family: helvetica;
+    line-height: normal;
+    text-align: left;
+    letter-spacing: normal;
+    background-color: #181719;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    height: 350px;
+    top: 1590px;
+    left: -9px;
+    margin-left: px;
+}
+
+.bottomBar h1{
+    margin-top: 75px;
+    margin-left: 5%;
+    font-size: 5em;
+}
+
+.bottomBar .bar{
+    margin-top: 25px;
+    margin-left: 5%;
+    font-size: 2.5em;
+    line-height: 10px;
+}
