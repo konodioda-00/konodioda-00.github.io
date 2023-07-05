@@ -1,0 +1,118 @@
+const vertexShader = `
+      #ifdef GL_ES
+			precision mediump float;
+			#endif
+
+			// those are the mandatory attributes that the lib sets
+			attribute vec3 aVertexPosition;
+			attribute vec2 aTextureCoord;
+
+			// those are mandatory uniforms that the lib sets and that contain our model view and projection matrix
+			uniform mat4 uMVMatrix;
+			uniform mat4 uPMatrix;
+          
+      // our texture matrix uniform (this is the lib default name, but it could be changed)
+      uniform mat4 uTextureMatrix0;
+
+			// if you want to pass your vertex and texture coords to the fragment shader
+			varying vec3 vVertexPosition;
+			varying vec2 vTextureCoord;
+
+			void main() {
+				vec3 vertexPosition = aVertexPosition;
+
+				gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
+
+				// set the varyings
+        // thanks to the texture matrix we will be able to calculate accurate texture coords
+        // so that our texture will always fit our plane without being distorted
+				vTextureCoord = (uTextureMatrix0 * vec4(aTextureCoord, 0.0, 1.0)).xy;
+				vVertexPosition = vertexPosition;
+			}
+`;
+const fragmentShader = `
+      #ifdef GL_ES
+			precision mediump float;
+			#endif
+
+			// get our varyings
+			varying vec3 vVertexPosition;
+			varying vec2 vTextureCoord;
+
+			// the uniform we declared inside our javascript
+			uniform float uTime;
+      uniform vec2 uMousePosition;
+
+			// our texture sampler (default name, to use a different name please refer to the documentation)
+			uniform sampler2D uSampler0;
+
+			void main() {
+        // get our texture coords
+				vec2 textureCoord = vTextureCoord;
+
+				// displace our pixels along both axis based on our time uniform and texture UVs
+				// reminder : textures coords are ranging from 0.0 to 1.0 on both axis
+
+        textureCoord.x += sin(textureCoord.y * 10.0 + uTime * 0.02 + uMousePosition.x * 0.01) * 0.004;
+        textureCoord.y += sin(textureCoord.x * 10.0 + uTime * 0.03 + uMousePosition.y * 0.01) * 0.006;
+
+				gl_FragColor = texture2D(uSampler0, textureCoord);
+			}
+`;
+
+class Img {
+  constructor() {
+    const curtain = new Curtains({
+      container: "canvas" });
+
+
+    const params = {
+      vertexShader,
+      fragmentShader,
+      widthSegments: 16,
+      heightSegments: 16,
+      uniforms: {
+        time: {
+          name: "uTime",
+          type: "1f",
+          value: 0 },
+
+        mousePosition: {
+          name: "uMousePosition",
+          type: "2f",
+          value: [0, 0] } } };
+
+
+
+
+    this.plane = curtain.addPlane(document.querySelector('.plane'), params);
+
+    if (this.plane) {
+      this.plane.
+      onReady(() => {
+        document.body.addEventListener("mousemove", e => this.handleMouseMove(e));
+      }).
+      onRender(() => {
+        this.plane.uniforms.time.value++;
+      });
+    }
+
+    // error handling
+    curtain.onError(function () {
+      document.body.classList.add("no-curtains");
+    });
+  }
+
+  handleMouseMove(e) {
+    const { clientX, clientY } = e;
+
+    this.plane.uniforms.mousePosition.value = [
+    clientX,
+    clientY];
+
+  }}
+
+
+window.onload = function () {
+  const img = new Img();
+};
